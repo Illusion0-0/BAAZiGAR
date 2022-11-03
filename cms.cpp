@@ -40,39 +40,31 @@ void ContactManager::printContacts(vector<Contact> result)
     }
 }
 
-vector<Contact> ContactManager::searchByFirstName(const string &firstName)
-{
+vector<Contact> ContactManager::searchByFirstName(const string &firstName) {
     vector<Contact> result;
-    for (auto &contact : contacts)
-    {
-        if (contact.getFirstName() == firstName)
-        {
+    for (auto &contact : contacts) {
+
+        if (toLowerString(contact.getFirstName()) == toLowerString(firstName)) {
             result.push_back(contact);
         }
     }
     return result;
 }
 
-vector<Contact> ContactManager::searchByLastName(const string &lastName)
-{
+vector<Contact> ContactManager::searchByLastName(const string &lastName) {
     vector<Contact> result;
-    for (auto &contact : contacts)
-    {
-        if (contact.getLastName() == lastName)
-        {
+    for (auto &contact : contacts) {
+        if (toLowerString(contact.getLastName()) == toLowerString(lastName)) {
             result.push_back(contact);
         }
     }
     return result;
 }
 
-vector<Contact> ContactManager::searchByPhoneNumber(const string &phoneNumber)
-{
+vector<Contact> ContactManager::searchByPhoneNumber(const string &phoneNumber) {
     vector<Contact> result;
-    for (auto &contact : contacts)
-    {
-        if (contact.getPhoneNumber() == phoneNumber)
-        {
+    for (auto &contact : contacts) {
+        if (contact.getPhoneNumber() == phoneNumber) {
             result.push_back(contact);
         }
     }
@@ -80,13 +72,10 @@ vector<Contact> ContactManager::searchByPhoneNumber(const string &phoneNumber)
 }
 
 vector<Contact> ContactManager::searchByFirstNamePrefix(
-    const string &firstNamePrefix)
-{
+        const string &firstNamePrefix) {
     vector<Contact> result;
-    for (auto &contact : contacts)
-    {
-        if (contact.getFirstName().find(firstNamePrefix) == 0)
-        {
+    for (auto &contact : contacts) {
+        if (toLowerString(contact.getFirstName()).find(toLowerString(firstNamePrefix)) == 0) {
             result.push_back(contact);
         }
     }
@@ -94,13 +83,10 @@ vector<Contact> ContactManager::searchByFirstNamePrefix(
 }
 
 vector<Contact> ContactManager::searchByLastNamePrefix(
-    const string &lastNamePrefix)
-{
+        const string &lastNamePrefix) {
     vector<Contact> result;
-    for (auto &contact : contacts)
-    {
-        if (contact.getLastName().find(lastNamePrefix) == 0)
-        {
+    for (auto &contact : contacts) {
+        if (toLowerString(contact.getLastName()).find(toLowerString(lastNamePrefix)) == 0) {
             result.push_back(contact);
         }
     }
@@ -108,18 +94,24 @@ vector<Contact> ContactManager::searchByLastNamePrefix(
 }
 
 vector<Contact> ContactManager::searchByPhoneNumberPrefix(
-    const string &phoneNumberPrefix)
-{
+        const string &phoneNumberPrefix) {
     vector<Contact> result;
-    for (auto &contact : contacts)
-    {
-        if (contact.getPhoneNumber().find(phoneNumberPrefix) == 0)
-        {
+    for (auto &contact : contacts) {
+        if (contact.getPhoneNumber().find(phoneNumberPrefix) == 0) {
             result.push_back(contact);
         }
     }
     return result;
 }
+
+string ContactManager::toLowerString(const string inputString){
+     string result;
+    for(auto character : inputString){
+        result+=tolower(character);
+    }
+    return result;
+}
+
 
 void ContactManager::inputContact()
 {

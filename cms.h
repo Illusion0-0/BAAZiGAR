@@ -49,6 +49,8 @@ public:
     vector<Contact> searchByPhoneNumberPrefix(const string &phoneNumberPrefix);
     // print result contacts
     void printContacts(vector<Contact> result);
+    // making string to lowercase	
+   string toLowerString(const string inputString);
 
 private:
     vector<Contact> contacts;
