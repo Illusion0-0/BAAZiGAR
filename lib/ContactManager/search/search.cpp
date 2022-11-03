@@ -1,0 +1,6 @@
+#include "searchByFirstName.cpp"
+#include "searchByFirstNamePrefix.cpp"
+#include "searchByLastName.cpp"
+#include "searchByLastNamePrefix.cpp"
+#include "searchByPhoneNumber.cpp"
+#include "searchByPhoneNumberPrefix.cpp"
