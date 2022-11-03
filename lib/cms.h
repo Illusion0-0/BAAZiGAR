@@ -39,16 +39,17 @@ public:
 private:
     struct TrieNode
     {
-        TrieNode *children[26];
+        // TrieNode *children[26];
+        unordered_map<char, TrieNode *> children;
         vector<Contact> contacts;
 
-        TrieNode()
-        {
-            for (int i = 0; i < 26; i++)
-            {
-                children[i] = NULL;
-            }
-        }
+        // TrieNode()
+        // {
+        //     for (int i = 0; i < 26; i++)
+        //     {
+        //         children[i] = NULL;
+        //     }
+        // }
     };
 
     TrieNode *root;
@@ -65,16 +66,17 @@ public:
 private:
     struct TrieNode
     {
-        TrieNode *children[26];
+        // TrieNode *children[26];
+        unordered_map<char, TrieNode *> children;
         vector<Contact> contacts;
 
-        TrieNode()
-        {
-            for (int i = 0; i < 26; i++)
-            {
-                children[i] = NULL;
-            }
-        }
+        // TrieNode()
+        // {
+        //     for (int i = 0; i < 26; i++)
+        //     {
+        //         children[i] = NULL;
+        //     }
+        // }
     };
 
     TrieNode *root;
@@ -91,16 +93,17 @@ public:
 private:
     struct TrieNode
     {
-        TrieNode *children[11];
+        // TrieNode *children[11];
+        unordered_map<char, TrieNode *> children;
         vector<Contact> contacts;
 
-        TrieNode()
-        {
-            for (int i = 0; i < 11; i++)
-            {
-                children[i] = NULL;
-            }
-        }
+        // TrieNode()
+        // {
+        //     for (int i = 0; i < 11; i++)
+        //     {
+        //         children[i] = NULL;
+        //     }
+        // }
     };
 
     TrieNode *root;
