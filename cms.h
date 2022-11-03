@@ -37,6 +37,7 @@ public:
     bool isValidName(const string &name);
     bool isValidFirstName(const string &firstName);
 
+    void searchContact();
     vector<Contact> searchByFirstName(const string &firstName);
     vector<Contact> searchByLastName(const string &lastName);
     vector<Contact> searchByPhoneNumber(const string &phoneNumber);
@@ -49,8 +50,8 @@ public:
     vector<Contact> searchByPhoneNumberPrefix(const string &phoneNumberPrefix);
     // print result contacts
     void printContacts(vector<Contact> result);
-    // making string to lowercase	
-   string toLowerString(const string inputString);
+    // making string to lowercase
+    string toLowerString(const string inputString);
 
 private:
     vector<Contact> contacts;
