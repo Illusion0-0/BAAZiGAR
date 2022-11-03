@@ -10,9 +10,8 @@
 
 using namespace std;
 
-class Contact
-{
-public:
+class Contact {
+   public:
     Contact(const string &firstName, const string &lastName,
             const string &phoneNumber);
 
@@ -20,17 +19,21 @@ public:
     const string getLastName();
     const string getPhoneNumber();
 
-private:
+   private:
     string firstName;
     string lastName;
     string phoneNumber;
 };
 
-class ContactManager
-{
-public:
+class ContactManager {
+   public:
     void getContact();
     void addContact(const Contact &contact);
+    // valid phone number to be of maximum 14 digits and have + at the beginning
+    bool isValidPhoneNumber(const string &phoneNumber);
+    // valid first name
+    bool isValidName(const string &name);
+    bool isValidFirstName(const string &firstName);
 
     vector<Contact> searchByFirstName(const string &firstName);
     vector<Contact> searchByLastName(const string &lastName);
@@ -43,8 +46,8 @@ public:
     // search by prefix for phone number
     vector<Contact> searchByPhoneNumberPrefix(const string &phoneNumberPrefix);
 
-private:
+   private:
     vector<Contact> contacts;
 };
 
-#endif // CMS_H
+#endif  // CMS_H
