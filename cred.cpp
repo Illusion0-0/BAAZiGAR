@@ -1,9 +1,10 @@
 #include <bits/stdc++.h>
+#include "cms.h"
 using namespace std;
+
 int main(){
 
     bool ok=true;
-
     do{
         int operation;
         cout<<"-----CONTACT MANAGER-----"<<endl;
@@ -15,12 +16,9 @@ int main(){
         cout<<"-----5) PARTIAL SEARCH BY FIRST NAME-----"<<endl;
         cout<<"-----6) PARTIAL SEARCH BY LAST NAME-----"<<endl;
         cout<<"-----7) PARTIAL SEARCH BY PHONE NUMBER-----"<<endl;
-
-
-
         cout<<"-----5) EXIT-----"<<endl;
         cin>>operation;
-        switcih(operation){
+        switch(operation){
             case 1:
                 cms.addContact();
                 break;
@@ -39,15 +37,15 @@ int main(){
 
             case 5:
                 cms.searchByFirstNamePrefix();
-            break;
+                break;
 
             case 6:
                 cms.searchByLirstNamePrefix();
-            break;
+                break;
 
             case 7:
                 cms.searchByPhoneNumberPrefix();
-            break;
+                break;
 
             default:
                 cout<<"Please Choose between 1 to 7"<<endl;
@@ -56,5 +54,4 @@ int main(){
 
     }
     while(ok);
-
 }
