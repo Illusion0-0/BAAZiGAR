@@ -10,8 +10,10 @@
 
 using namespace std;
 
-class Contact {
-   public:
+class Contact
+{
+public:
+    // Constructor
     Contact(const string &firstName, const string &lastName,
             const string &phoneNumber);
 
@@ -19,26 +21,31 @@ class Contact {
     const string getLastName();
     const string getPhoneNumber();
 
-   private:
+private:
+    int uid;
     string firstName;
     string lastName;
     string phoneNumber;
 };
 
-class firstNameTrie {
-   public:
+class firstNameTrie
+{
+public:
     firstNameTrie();
     void insert(const string &firstName, const Contact &contact);
     vector<Contact> search(const string &firstName);
     vector<Contact> searchPrefix(const string &firstNamePrefix);
 
-   private:
-    struct TrieNode {
+private:
+    struct TrieNode
+    {
         TrieNode *children[26];
         vector<Contact> contacts;
 
-        TrieNode() {
-            for (int i = 0; i < 26; i++) {
+        TrieNode()
+        {
+            for (int i = 0; i < 26; i++)
+            {
                 children[i] = NULL;
             }
         }
@@ -47,20 +54,24 @@ class firstNameTrie {
     TrieNode *root;
 };
 
-class lastNameTrie {
-   public:
+class lastNameTrie
+{
+public:
     lastNameTrie();
     void insert(const string &lastName, const Contact &contact);
     vector<Contact> search(const string &lastName);
     vector<Contact> searchPrefix(const string &lastNamePrefix);
 
-   private:
-    struct TrieNode {
+private:
+    struct TrieNode
+    {
         TrieNode *children[26];
         vector<Contact> contacts;
 
-        TrieNode() {
-            for (int i = 0; i < 26; i++) {
+        TrieNode()
+        {
+            for (int i = 0; i < 26; i++)
+            {
                 children[i] = NULL;
             }
         }
@@ -69,20 +80,24 @@ class lastNameTrie {
     TrieNode *root;
 };
 
-class phoneNumberTrie {
-   public:
+class phoneNumberTrie
+{
+public:
     phoneNumberTrie();
     void insert(const string &phoneNumber, const Contact &contact);
     vector<Contact> search(const string &phoneNumber);
     vector<Contact> searchPrefix(const string &phoneNumberPrefix);
 
-   private:
-    struct TrieNode {
+private:
+    struct TrieNode
+    {
         TrieNode *children[11];
         vector<Contact> contacts;
 
-        TrieNode() {
-            for (int i = 0; i < 11; i++) {
+        TrieNode()
+        {
+            for (int i = 0; i < 11; i++)
+            {
                 children[i] = NULL;
             }
         }
@@ -91,8 +106,9 @@ class phoneNumberTrie {
     TrieNode *root;
 };
 
-class ContactManager {
-   public:
+class ContactManager
+{
+public:
     void inputContact();
     void addContact(const Contact &contact);
     // valid phone number to be of maximum 14 digits and have + at the beginning
@@ -100,6 +116,7 @@ class ContactManager {
     // valid first name
     bool isValidName(const string &name);
 
+    void readContacts();
     void searchManager();
     vector<Contact> searchByFirstName(const string &firstName);
     vector<Contact> searchByLastName(const string &lastName);
@@ -116,10 +133,10 @@ class ContactManager {
     // making string to lowercase
     string toLowerString(const string inputString);
 
-   private:
+private:
     firstNameTrie firstNameTrieObj;
     lastNameTrie lastNameTrieObj;
     phoneNumberTrie phoneNumberTrieObj;
 };
 
-#endif  // CMS_H
+#endif // CMS_H
