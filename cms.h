@@ -10,8 +10,9 @@
 
 using namespace std;
 
-class Contact {
-   public:
+class Contact
+{
+public:
     Contact(const string &firstName, const string &lastName,
             const string &phoneNumber);
 
@@ -19,22 +20,31 @@ class Contact {
     const string getLastName();
     const string getPhoneNumber();
 
-   private:
+private:
     string firstName;
     string lastName;
     string phoneNumber;
 };
 
-class ContactManager {
-   public:
+class ContactManager
+{
+public:
+    void getContact();
     void addContact(const Contact &contact);
 
     vector<Contact> searchByFirstName(const string &firstName);
     vector<Contact> searchByLastName(const string &lastName);
     vector<Contact> searchByPhoneNumber(const string &phoneNumber);
 
-   private:
+    // search by prefix for first name
+    vector<Contact> searchByFirstNamePrefix(const string &firstNamePrefix);
+    // search by prefix for last name
+    vector<Contact> searchByLastNamePrefix(const string &lastNamePrefix);
+    // search by prefix for phone number
+    vector<Contact> searchByPhoneNumberPrefix(const string &phoneNumberPrefix);
+
+private:
     vector<Contact> contacts;
 };
 
-#endif  // CMS_H
+#endif // CMS_H
