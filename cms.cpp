@@ -5,6 +5,9 @@
 #include "lib/ContactManager/input.cpp"
 #include "lib/ContactManager/output.cpp"
 #include "lib/ContactManager/search/search.cpp"
+#include "lib/ContactManager/trie/firstNameTrie.cpp"
+#include "lib/ContactManager/trie/lastNameTrie.cpp"
+#include "lib/ContactManager/trie/phoneNumberTrie.cpp"
 #include "lib/ContactManager/validation/validate.cpp"
 
 using namespace std;
@@ -22,9 +25,9 @@ const string Contact::getLastName() { return this->lastName; }
 
 const string Contact::getPhoneNumber() { return this->phoneNumber; }
 
-void ContactManager::addContact(const Contact &contact) {
-    contacts.push_back(contact);
-}
+// void ContactManager::addContact(const Contact &contact) {
+//     contacts.push_back(contact);
+// }
 
 string ContactManager::toLowerString(const string inputString) {
     string result;

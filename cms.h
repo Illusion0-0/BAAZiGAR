@@ -10,9 +10,8 @@
 
 using namespace std;
 
-class Contact
-{
-public:
+class Contact {
+   public:
     Contact(const string &firstName, const string &lastName,
             const string &phoneNumber);
 
@@ -20,15 +19,82 @@ public:
     const string getLastName();
     const string getPhoneNumber();
 
-private:
+   private:
     string firstName;
     string lastName;
     string phoneNumber;
 };
 
-class ContactManager
-{
-public:
+// implement trie for first name using class
+class firstNameTrie {
+   public:
+    firstNameTrie();
+    void insert(const string &firstName, const Contact &contact);
+    vector<Contact> search(const string &firstName);
+    vector<Contact> searchPrefix(const string &firstNamePrefix);
+
+   private:
+    struct TrieNode {
+        TrieNode *children[53];
+        vector<Contact> contacts;
+
+        TrieNode() {
+            for (int i = 0; i < 53; i++) {
+                children[i] = NULL;
+            }
+        }
+    };
+
+    TrieNode *root;
+};
+
+// implement trie for last name using class
+class lastNameTrie {
+   public:
+    lastNameTrie();
+    void insert(const string &lastName, const Contact &contact);
+    vector<Contact> search(const string &lastName);
+    vector<Contact> searchPrefix(const string &lastNamePrefix);
+
+   private:
+    struct TrieNode {
+        TrieNode *children[53];
+        vector<Contact> contacts;
+
+        TrieNode() {
+            for (int i = 0; i < 53; i++) {
+                children[i] = NULL;
+            }
+        }
+    };
+
+    TrieNode *root;
+};
+
+class phoneNumberTrie {
+   public:
+    phoneNumberTrie();
+    void insert(const string &phoneNumber, const Contact &contact);
+    vector<Contact> search(const string &phoneNumber);
+    vector<Contact> searchPrefix(const string &phoneNumberPrefix);
+
+   private:
+    struct TrieNode {
+        TrieNode *children[11];
+        vector<Contact> contacts;
+
+        TrieNode() {
+            for (int i = 0; i < 11; i++) {
+                children[i] = NULL;
+            }
+        }
+    };
+
+    TrieNode *root;
+};
+
+class ContactManager {
+   public:
     void inputContact();
     void addContact(const Contact &contact);
     // valid phone number to be of maximum 14 digits and have + at the beginning
@@ -53,8 +119,12 @@ public:
     // making string to lowercase
     string toLowerString(const string inputString);
 
-private:
-    vector<Contact> contacts;
+   private:
+    // vector<Contact> contacts;
+    // trie
+    firstNameTrie firstNameTrieObj;
+    lastNameTrie lastNameTrieObj;
+    phoneNumberTrie phoneNumberTrieObj;
 };
 
-#endif // CMS_H
+#endif  // CMS_H

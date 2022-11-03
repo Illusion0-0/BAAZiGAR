@@ -28,5 +28,10 @@ void ContactManager::inputContact() {
     Contact contact(firstName, lastName, phoneNumber);
 
     // Add contact to contact manager
-    addContact(contact);
+    // addContact(contact);
+
+    // add contact to trie
+    firstNameTrieObj.insert(toLowerString(firstName), contact);
+    lastNameTrieObj.insert(toLowerString(lastName), contact);
+    phoneNumberTrieObj.insert(phoneNumber, contact);
 }
