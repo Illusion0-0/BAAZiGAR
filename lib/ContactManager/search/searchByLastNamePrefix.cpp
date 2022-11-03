@@ -9,5 +9,5 @@ vector<Contact> ContactManager::searchByLastNamePrefix(
     // }
     // return result;
 
-    return lastNameTrieObj.searchPrefix(lastNamePrefix);
+    return lastNameTrieObj.searchPrefix(toLowerString(lastNamePrefix));
 }
