@@ -121,7 +121,7 @@ bool ContactManager::isValidPhoneNumber(const string &phoneNumber) {
     if (phoneNumber[0] != '+') {
         return false;
     }
-    if (phoneNumber.length() > 15) {
+    if (phoneNumber.length() > 15 || phoneNumber.length() < 8) {
         return false;
     }
     for (int i = 1; i < phoneNumber.length(); i++) {
