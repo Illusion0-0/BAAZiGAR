@@ -2,13 +2,13 @@
 
 #include <bits/stdc++.h>
 
-#include "lib/ContactManager/input.cpp"
-#include "lib/ContactManager/output.cpp"
-#include "lib/ContactManager/search/search.cpp"
-#include "lib/ContactManager/trie/firstNameTrie.cpp"
-#include "lib/ContactManager/trie/lastNameTrie.cpp"
-#include "lib/ContactManager/trie/phoneNumberTrie.cpp"
-#include "lib/ContactManager/validation/validate.cpp"
+#include "ContactManager/input.cpp"
+#include "ContactManager/output.cpp"
+#include "ContactManager/search/search.cpp"
+#include "ContactManager/trie/firstNameTrie.cpp"
+#include "ContactManager/trie/lastNameTrie.cpp"
+#include "ContactManager/trie/phoneNumberTrie.cpp"
+#include "ContactManager/validation/validate.cpp"
 
 using namespace std;
 

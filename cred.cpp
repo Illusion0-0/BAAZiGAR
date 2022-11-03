@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 
-#include "cms.cpp"
-#include "cms.h"
+#include "lib/cms.cpp"
+#include "lib/cms.h"
 using namespace std;
 
 void menu() {
