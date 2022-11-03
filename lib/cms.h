@@ -25,7 +25,7 @@ class Contact {
     string phoneNumber;
 };
 
-// implement trie for first name using class
+
 class firstNameTrie {
    public:
     firstNameTrie();
@@ -35,11 +35,11 @@ class firstNameTrie {
 
    private:
     struct TrieNode {
-        TrieNode *children[53];
+        TrieNode *children[26];
         vector<Contact> contacts;
 
         TrieNode() {
-            for (int i = 0; i < 53; i++) {
+            for (int i = 0; i < 26; i++) {
                 children[i] = NULL;
             }
         }
@@ -48,7 +48,7 @@ class firstNameTrie {
     TrieNode *root;
 };
 
-// implement trie for last name using class
+
 class lastNameTrie {
    public:
     lastNameTrie();
@@ -58,11 +58,11 @@ class lastNameTrie {
 
    private:
     struct TrieNode {
-        TrieNode *children[53];
+        TrieNode *children[26];
         vector<Contact> contacts;
 
         TrieNode() {
-            for (int i = 0; i < 53; i++) {
+            for (int i = 0; i < 26; i++) {
                 children[i] = NULL;
             }
         }
@@ -120,8 +120,7 @@ class ContactManager {
     string toLowerString(const string inputString);
 
    private:
-    // vector<Contact> contacts;
-    // trie
+
     firstNameTrie firstNameTrieObj;
     lastNameTrie lastNameTrieObj;
     phoneNumberTrie phoneNumberTrieObj;
