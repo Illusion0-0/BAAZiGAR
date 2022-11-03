@@ -25,7 +25,6 @@ class Contact {
     string phoneNumber;
 };
 
-
 class firstNameTrie {
    public:
     firstNameTrie();
@@ -47,7 +46,6 @@ class firstNameTrie {
 
     TrieNode *root;
 };
-
 
 class lastNameTrie {
    public:
@@ -101,9 +99,8 @@ class ContactManager {
     bool isValidPhoneNumber(const string &phoneNumber);
     // valid first name
     bool isValidName(const string &name);
-    bool isValidFirstName(const string &firstName);
 
-    void searchContact();
+    void searchManager();
     vector<Contact> searchByFirstName(const string &firstName);
     vector<Contact> searchByLastName(const string &lastName);
     vector<Contact> searchByPhoneNumber(const string &phoneNumber);
@@ -120,7 +117,6 @@ class ContactManager {
     string toLowerString(const string inputString);
 
    private:
-
     firstNameTrie firstNameTrieObj;
     lastNameTrie lastNameTrieObj;
     phoneNumberTrie phoneNumberTrieObj;

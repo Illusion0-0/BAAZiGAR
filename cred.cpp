@@ -25,7 +25,7 @@ int main() {
                 break;
 
             case 2:
-                cms.searchContact();
+                cms.searchManager();
                 break;
 
             case 3:
@@ -34,7 +34,7 @@ int main() {
                 break;
 
             default:
-                cout << "Please Choose between 1 to 8" << endl;
+                cout << "Please Choose between 1 to 3" << endl;
         }
         int choice;
         cout << "\nDo you want to continue? (1/0)" << endl;

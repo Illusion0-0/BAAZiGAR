@@ -7,8 +7,7 @@
 
 using namespace std;
 
-void ContactManager::searchContact()
-{
+void ContactManager::searchManager() {
     int choice;
     string input;
     vector<Contact> result;
@@ -23,29 +22,28 @@ void ContactManager::searchContact()
     cin >> choice;
     cout << "Enter the search string: ";
     cin >> input;
-    switch (choice)
-    {
-    case 1:
-        result = searchByFirstName(input);
-        break;
-    case 2:
-        result = searchByLastName(input);
-        break;
-    case 3:
-        result = searchByPhoneNumber(input);
-        break;
-    case 4:
-        result = searchByFirstNamePrefix(input);
-        break;
-    case 5:
-        result = searchByLastNamePrefix(input);
-        break;
-    case 6:
-        result = searchByPhoneNumberPrefix(input);
-        break;
-    default:
-        cout << "Invalid choice" << endl;
-        return;
+    switch (choice) {
+        case 1:
+            result = searchByFirstName(input);
+            break;
+        case 2:
+            result = searchByLastName(input);
+            break;
+        case 3:
+            result = searchByPhoneNumber(input);
+            break;
+        case 4:
+            result = searchByFirstNamePrefix(input);
+            break;
+        case 5:
+            result = searchByLastNamePrefix(input);
+            break;
+        case 6:
+            result = searchByPhoneNumberPrefix(input);
+            break;
+        default:
+            cout << "Invalid choice" << endl;
+            return;
     }
     printContacts(result);
 }
