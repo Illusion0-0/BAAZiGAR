@@ -16,8 +16,6 @@ int main() {
     ContactManager cms;
     do {
         int operation;
-        string firstName, lastName, phoneNumber, firstNamePrefix,
-            lastNamePrefix, phoneNumberPrefix;
         vector<Contact> result;
         menu();
         cin >> operation;
