@@ -37,7 +37,7 @@ class NameTrie {
    private:
     struct TrieNode {
         // TrieNode *children[26];
-        map<char, TrieNode *> children;
+        map<int, TrieNode *> children;
         vector<Contact> contacts;
 
         // TrieNode()
@@ -62,7 +62,7 @@ class phoneNumberTrie {
    private:
     struct TrieNode {
         // TrieNode *children[11];
-        map<char, TrieNode *> children;
+        map<int, TrieNode *> children;
         vector<Contact> contacts;
 
         // TrieNode()
