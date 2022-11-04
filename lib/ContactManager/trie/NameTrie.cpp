@@ -1,8 +1,8 @@
-firstNameTrie::firstNameTrie() { root = new TrieNode(); }
+NameTrie::NameTrie() { root = new TrieNode(); }
 
-void firstNameTrie::insert(const string &firstName, const Contact &contact) {
+void NameTrie::insert(const string &name, const Contact &contact) {
     TrieNode *currentNode = root;
-    for (auto character : firstName) {
+    for (auto character : name) {
         int index = character - 'a';
         if (currentNode->children[index] == NULL) {
             currentNode->children[index] = new TrieNode();
@@ -12,9 +12,9 @@ void firstNameTrie::insert(const string &firstName, const Contact &contact) {
     currentNode->contacts.push_back(contact);
 }
 
-vector<Contact> firstNameTrie::search(const string &firstName) {
+vector<Contact> NameTrie::search(const string &name) {
     TrieNode *currentNode = root;
-    for (auto character : firstName) {
+    for (auto character : name) {
         int index = character - 'a';
 
         if (currentNode->children[index] == NULL) {
@@ -25,9 +25,9 @@ vector<Contact> firstNameTrie::search(const string &firstName) {
     return currentNode->contacts;
 }
 
-vector<Contact> firstNameTrie::searchPrefix(const string &firstNamePrefix) {
+vector<Contact> NameTrie::searchPrefix(const string &namePrefix) {
     TrieNode *currentNode = root;
-    for (auto character : firstNamePrefix) {
+    for (auto character : namePrefix) {
         int index = character - 'a';
         if (currentNode->children[index] == NULL) {
             return vector<Contact>();
